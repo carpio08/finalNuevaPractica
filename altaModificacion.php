@@ -7,12 +7,21 @@ if (isset($_POST['accion'])) {
 			$nombre = "";
 			$precio = "";
 			$tipo = "";				
+			$selectSolido = false;
+			$selectLiquido = false;			
 			break;		
 		case 'Modificacion':
 			$codigo = $_POST['codigoModificar'];	
 			$nombre = $_POST['nombre'];	
 			$precio = $_POST['precio'];	
-			$tipo = $_POST['tipo'];		   
+
+			if($_POST['tipo'] == "solido"){
+				$selectSolido = "true";
+				$selectLiquido = "false";
+			}else{
+				$selectSolido = "false";
+				$selectLiquido = "true";
+			}
 			break;		
 	}
 }else{
@@ -37,10 +46,13 @@ if (isset($_POST['accion'])) {
     <input type="text" placeholder="precio" id="precio" value="<?php echo $precio; ?>" />
     <span id="lblprecio" style="display:none;color:#FF0000;font-size:80">ingrese precio</span>
     <br>
-    <input type="text" placeholder="tipo" id="tipo" value="<?php echo $tipo; ?>" required/>
-    <span id="lbltipo" style="display:none;color:#FF0000;font-size:80">ingrese tipo</span>
+
+	<select id="tipo" style="width:90%;">
+	    <option value="solido"<?php if ($selectSolido == 'true') echo ' selected="true"'; ?> >Solido</option>
+	    <option value="liquido"<?php if ($selectLiquido == 'true') echo ' selected="true"'; ?>>liquido</option>	   
+	</select>
 	<br>
-	<button class="btn btn-info" style="float: left;" name="volver" onclick="Guardar(<?php echo $codigo; ?>)" >
+	<button class="btn btn-info" style="float: left; margin-top:20px;" name="volver" onclick="Guardar(<?php echo $codigo; ?>)" >
 		GUARDAR
 	</button>	
 

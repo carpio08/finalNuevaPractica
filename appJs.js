@@ -132,11 +132,6 @@ function validarInputs(){
 	}else{
 		document.getElementById('lblprecio').style.display = "none";
 	}
-	if(!document.getElementById('tipo').value){
-		document.getElementById('lbltipo').style.display = "block";
-		retorno = false;
-	}else{
-		document.getElementById('lbltipo').style.display = "none";
-	}
+	
 	return retorno;
 }
