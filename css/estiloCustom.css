@@ -1,0 +1,19 @@
+.margen-inputs{
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.tamano-inputs{
+	width: 40%;
+	height: 30px;
+}
+
+.label-error{
+	color: "red";
+	font-weight: bold;
+}
+
+.alienar-izquierda{
+	float: left;
+	margin-left: 15px;
+}
