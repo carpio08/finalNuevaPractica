@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+	  <link rel="stylesheet" type="text/css" href="css/animacion.css">
+	  <link rel="stylesheet" type="text/css" href="css/estiloCustom.css">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	  <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+	  <script type="text/javascript" src="capaJs.js"></script>
+	  <script type="text/javascript" src="appJs.js"></script>
+  
+</head>
+<body onload="init()">
+<form id="form">	
+	<div id="loginForm" class="container">
+		<div  class="tamano-inputs margen-inputs">
+			<input type="email" name="user" id="user" value="" placeholder="ingrese usuario" value="" required/>	
+		</div>
+		<br>
+		<div  class="tamano-inputs margen-inputs">
+			<input type="password" name="pass" id="pass" value="" placeholder="ingrese contrasena" maxlength="4" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required/>
+		</div>
+		<br>
+	</div>
+</form>
+		<div class="margen-inputs container" >
+			<button class="btn btn-info" id="btnIngresar" name="ingresar" onclick="ingresar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>
+				Ingresar
+			</button>	
+			<button class="btn btn-info " name="ingresarComoAdmin" onclick="ingresarComoAdmin()" ><span class="glyphicon glyphicon-save">&nbsp;</span>
+				Ingresar como Administrador
+			</button>
+			<br>
+			<button class="btn btn-info " name="borrarCookies" onclick="BorrarCookies()" ><span class="glyphicon glyphicon-save">&nbsp;</span>
+				Borrar cookies
+			</button>
+			<div id="msjDeError" class="margen-inputs">
+			</div>	
+			<br>	
+		</div>	
+	
+
+	<form name="frmApp" method="POST" action="app.php" >
+		<input type="hidden" name="userName" id="userName" />
+	</form>
+
+	
+
+	</div>
+	
+</body>
+</html>
